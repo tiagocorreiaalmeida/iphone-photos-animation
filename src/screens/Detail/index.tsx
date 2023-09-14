@@ -1,10 +1,16 @@
-import { Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import React from "react";
+import type { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../../Navigation";
 
-export const DetailScreen = () => {
+type Props = NativeStackScreenProps<RootStackParamList, "Detail">;
+
+export const DetailScreen = ({ route }: Props) => {
+  const { url } = route.params;
+
   return (
-    <View>
-      <Text>Detail</Text>
+    <View style={{ flex: 1 }}>
+      <Image source={{ uri: url }} style={{ flex: 1 }} resizeMode="cover" />
     </View>
   );
 };

@@ -4,7 +4,12 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { DetailScreen } from "./screens/Detail";
 import { GalleryScreen } from "./screens/Gallery";
 
-const Stack = createNativeStackNavigator();
+export type RootStackParamList = {
+  Gallery: undefined;
+  Detail: { url: string };
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export const Navigation = () => {
   return (
