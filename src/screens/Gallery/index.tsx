@@ -1,4 +1,4 @@
-import { FlatList, ListRenderItem, StyleSheet } from "react-native";
+import { FlatList, ListRenderItem } from "react-native";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React, { useCallback } from "react";
 
