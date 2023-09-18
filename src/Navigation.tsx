@@ -3,10 +3,11 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { DetailScreen } from "./screens/Detail";
 import { GalleryScreen } from "./screens/Gallery";
+import type { GalleryItem } from "./types";
 
 export type RootStackParamList = {
   Gallery: undefined;
-  Detail: { url: string };
+  Detail: { item: GalleryItem };
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();

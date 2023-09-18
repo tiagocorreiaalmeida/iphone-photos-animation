@@ -8,7 +8,6 @@ import Animated, {
   runOnJS,
   useAnimatedStyle,
   useSharedValue,
-  withDelay,
   withTiming,
 } from "react-native-reanimated";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
@@ -18,7 +17,7 @@ type Props = NativeStackScreenProps<RootStackParamList, "Detail">;
 const DISMISS_TRIGGER_PERCENTAGE = 0.1;
 
 export const DetailScreen = ({ route, navigation }: Props) => {
-  const { url } = route.params;
+  const { url, id } = route.params.item;
 
   const { height: windowHeight, width: windowWidth } = useWindowDimensions();
   const xPosition = useSharedValue(0);
@@ -72,7 +71,7 @@ export const DetailScreen = ({ route, navigation }: Props) => {
     <GestureDetector gesture={panGesture}>
       <Animated.View style={[{ flex: 1 }, containerAnimatedStyles]}>
         <Animated.Image
-          sharedTransitionTag={url}
+          sharedTransitionTag={id}
           source={{ uri: url }}
           style={[
             {

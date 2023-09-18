@@ -1,32 +1,23 @@
-import { Image, StyleSheet, TouchableOpacity } from "react-native";
+import { TouchableOpacity } from "react-native";
 import React from "react";
 import Animated from "react-native-reanimated";
+import { GalleryItem as GalleryItemType } from "../../../../types";
+import { styles } from "./styles";
 
 interface GalleryItemProps {
-  url: string;
+  data: GalleryItemType;
   onPress: () => void;
 }
 
-const GalleryItem: React.FC<GalleryItemProps> = ({ url, onPress }) => {
+export const GalleryItem: React.FC<GalleryItemProps> = ({ data, onPress }) => {
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <Animated.Image
-        sharedTransitionTag={url}
-        source={{ uri: url }}
+        sharedTransitionTag={data.id}
+        source={{ uri: data.url }}
         style={styles.image}
         resizeMode="cover"
       />
     </TouchableOpacity>
   );
 };
-
-export default GalleryItem;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  image: {
-    aspectRatio: 1,
-  },
-});
