@@ -25,7 +25,7 @@ export const DetailScreen = ({ route, navigation }: Props) => {
   const yPosition = useSharedValue(0);
 
   const panGesture = Gesture.Pan()
-    // .activateAfterLongPress(300)
+    .activateAfterLongPress(50)
     .onUpdate((e) => {
       showBackground.value = 1;
       xPosition.value = e.translationX;
