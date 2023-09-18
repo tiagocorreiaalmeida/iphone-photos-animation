@@ -16,7 +16,11 @@ export const Navigation = () => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Gallery">
         <Stack.Screen name="Gallery" component={GalleryScreen} />
-        <Stack.Screen name="Detail" component={DetailScreen} />
+        <Stack.Screen
+          name="Detail"
+          component={DetailScreen}
+          options={{ presentation: "transparentModal", headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,5 +1,6 @@
 import { Image, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
+import Animated from "react-native-reanimated";
 
 interface GalleryItemProps {
   url: string;
@@ -9,7 +10,12 @@ interface GalleryItemProps {
 const GalleryItem: React.FC<GalleryItemProps> = ({ url, onPress }) => {
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Image source={{ uri: url }} style={styles.image} resizeMode="cover" />
+      <Animated.Image
+        sharedTransitionTag={url}
+        source={{ uri: url }}
+        style={styles.image}
+        resizeMode="cover"
+      />
     </TouchableOpacity>
   );
 };
