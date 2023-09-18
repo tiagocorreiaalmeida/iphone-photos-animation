@@ -15,12 +15,15 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 export const Navigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Gallery">
+      <Stack.Navigator
+        initialRouteName="Gallery"
+        screenOptions={{ headerShown: false }}
+      >
         <Stack.Screen name="Gallery" component={GalleryScreen} />
         <Stack.Screen
           name="Detail"
           component={DetailScreen}
-          options={{ presentation: "transparentModal", headerShown: false }}
+          options={{ presentation: "transparentModal" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

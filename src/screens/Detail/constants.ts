@@ -1,0 +1,1 @@
+export const DISMISS_TRIGGER_PERCENTAGE = 0.2;
